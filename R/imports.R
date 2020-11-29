@@ -1,5 +1,7 @@
-#' @import sf
-#' @import leaflet
-#' @import shiny
-#' @import shinydashboard
+#' @import reshape2
+#' @import glue
+#' @import lubridate
+#' @import rjson
+#' @import httr
+#' @import googlesheets4
 NULL
