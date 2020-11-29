@@ -1,11 +1,19 @@
 Package: gethouse
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Collecting new houses infomation from Administrative residential plan
+Version: 0.0.1
+Authors@R: person("Sungwook", "Ok", email = "aworklab@gmail.com", role = c("aut", "cre"))
+Description: No need to wait to get new house list in the portal. Just run and wait
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
+Imports: 
+    reshape2,
+    glue,
+    lubridate,
+    rjson,
+    httr,
+    googlesheets4

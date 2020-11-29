@@ -1,9 +1,3 @@
-# Library -----------------------------------------------------------------
-
-library('tidyverse', 'lubridate', 'glue')
-library('rjson', 'httr')
-library('googlesheets4')
-
 # Code data ---------------------------------------------------------------
 
 # gs4_auth(email = 'aworklab@gmail.com')
@@ -13,7 +7,7 @@ library('googlesheets4')
 
 # 임대주택단지 조회 ---------------------------------------------------------------
 
-get.api_data = function(page = 1, region = '서울', supply = "행복", sz = 1000, api_key = NULL){
+gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, api_key = NULL){
 
   # 업데이트 함수
 
@@ -80,7 +74,10 @@ get.api_data = function(page = 1, region = '서울', supply = "행복", sz = 100
 
       res = tibble(
 
-        idx = sprintf('%s_%s_%s', str_remove_all(date(parsing_time), '-'),api_spl, temp_raw$status_code),
+        idx = sprintf('%s_%s_%s',
+                      str_remove_all(as.character(substring(parsing_time, 1, 10)), '-'),
+                      api_spl,
+                      temp_raw$status_code),
         log_date = parsing_time,
         type = supply,
         signgu_nm = region,
@@ -107,7 +104,10 @@ get.api_data = function(page = 1, region = '서울', supply = "행복", sz = 100
 
       res = tibble(
 
-        idx = sprintf('%s_%s_%s', str_remove_all(date(parsing_time), '-'),api_spl, temp_raw$status_code),
+        idx = sprintf('%s_%s_%s',
+                      str_remove_all(as.character(substring(parsing_time, 1, 10)), '-'),
+                      api_spl,
+                      temp_raw$status_code),
         log_date = parsing_time,
         type = supply,
         signgu_nm = region,
@@ -134,7 +134,10 @@ get.api_data = function(page = 1, region = '서울', supply = "행복", sz = 100
 
       res = tibble(
 
-        idx = sprintf('%s_%s_%s', str_remove_all(date(parsing_time), '-'),api_spl, temp_raw$status_code),
+        idx = sprintf('%s_%s_%s',
+                      str_remove_all(as.character(substring(parsing_time, 1, 10)), '-'),
+                      api_spl,
+                      temp_raw$status_code),
         log_date = parsing_time,
         type = supply,
         signgu_nm = region,
@@ -183,11 +186,11 @@ get.api_data = function(page = 1, region = '서울', supply = "행복", sz = 100
     temp = left_join(temp, code_api$signgu, by = 'signgu_nm')
 
     temp %>%
-      mutate(signgu_code = sprintf('%s_%s_%s',
-                                   str_remove_all(date(parsing_time), '-'),
+      mutate(idx = sprintf('%s_%s_%s',
+                                   str_remove_all(substring(as.character(parsing_time), 1, 10), '-'),
                                    api_spl,
                                    signgu_code)) %>%
-      select(idx = signgu_code, log_date, type, signgu_nm, region, city, everything()) -> temp
+      select(idx, log_date, type, signgu_nm, region, city, everything()) -> temp
 
 
 
