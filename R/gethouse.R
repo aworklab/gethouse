@@ -15,21 +15,29 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   # env에 저장 여부 체크 + 코드 데이터 호출
 
 
-  if(!("code_api" %in% ls(globalenv()))){
+  # if(!("code_api" %in% ls(globalenv()))){
+  #
+  #   code_api = new.env()
+  #
+  #   gs4_auth(email = 'aworklab@gmail.com')
+  #   gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
+  #
+  #   code_api$town = read_sheet(gs_test, 'code_type')
+  #   code_api$signgu = read_sheet(gs_test, 'code_signgu')
+  #
+  # }
 
-    code_api = new.env()
+  code_api = new.env()
 
-    gs4_auth(email = 'aworklab@gmail.com')
-    gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
+  gs4_auth(email = 'aworklab@gmail.com')
+  gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
 
-    code_api$town = read_sheet(gs_test, 'code_type')
-    code_api$signgu = read_sheet(gs_test, 'code_signgu')
-
-  }
+  code_api$town = read_sheet(gs_test, 'code_type')
+  code_api$signgu = read_sheet(gs_test, 'code_signgu')
 
 
-  api_region = filter(code_api$town, type == "region" & name == region)$code
-  api_spl = filter(code_api$town, type == "type_spl" & name == supply)$code
+  api_region = dplyr::filter(code_api$town, type == "municipal" & name == region)$code
+  api_spl = dplyr::filter(code_api$town, type == "type_spl" & name == supply)$code
 
   # api_region = code_api$town[type == "region" & name == region, ]$code
   # api_spl = code_api$town[type == "region" & name == supply, ]$code
@@ -52,8 +60,8 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   for(p in seq(page)){
 
     print(sprintf('%s %s : %s page is loading',
-                  filter(code_api$town, type == "region" & name == region)$name_full,
-                  filter(code_api$town, type == "type_spl" & name == supply)$name_full,
+                  dplyr::filter(code_api$town, type == "municipal" & name == region)$name_full,
+                  dplyr::filter(code_api$town, type == "type_spl" & name == supply)$name_full,
                   p          ))
 
     api_page = p

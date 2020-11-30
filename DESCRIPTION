@@ -17,5 +17,6 @@ Imports:
     rjson,
     httr,
     googlesheets4,
-    tidyverse,
-    data.table
+    dplyr,
+    stringr,
+    tidyr
