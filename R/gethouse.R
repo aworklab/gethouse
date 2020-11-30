@@ -8,8 +8,9 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   get.update = function(res){
 
     gs4_auth(email = 'aworklab@gmail.com')
-    gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
-    sheet_append(gs_test, res, sheet = 'res_api_call')
+    # gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
+    gs_test = '1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU'
+    sheet_append(gs_test, res, sheet = 'api_residence')
 
   }
   # env에 저장 여부 체크 + 코드 데이터 호출
