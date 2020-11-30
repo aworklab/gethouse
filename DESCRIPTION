@@ -17,4 +17,5 @@ Imports:
     rjson,
     httr,
     googlesheets4,
-    dplyr
+    dplyr,
+    data.table

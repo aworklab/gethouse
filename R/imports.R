@@ -5,4 +5,5 @@
 #' @import httr
 #' @import googlesheets4
 #' @import dplyr
+#' @ipoort data.table
 NULL
