@@ -4,4 +4,5 @@
 #' @import rjson
 #' @import httr
 #' @import googlesheets4
+#' @import dplyr
 NULL
