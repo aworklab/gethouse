@@ -18,13 +18,10 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   if(!("code_api" %in% ls(globalenv()))){
 
     code_api = new.env()
-<<<<<<< HEAD
-    code_api
+
     gs4_auth(email = 'aworklab@gmail.com')
     gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
-=======
-    
->>>>>>> 3276a4683b657b8a8434c328390c21ba8f056fa6
+
     code_api$town = read_sheet(gs_test, 'code_type')
     code_api$signgu = read_sheet(gs_test, 'code_signgu')
 
