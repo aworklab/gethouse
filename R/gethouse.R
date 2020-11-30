@@ -8,7 +8,6 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   get.update = function(res){
 
     gs4_auth(email = 'aworklab@gmail.com')
-    # gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
     gs_test = '1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU'
     sheet_append(gs_test, res, sheet = 'api_residence')
 
@@ -16,25 +15,19 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   # env에 저장 여부 체크 + 코드 데이터 호출
 
 
-  # if(!("code_api" %in% ls(globalenv()))){
-  #
-  #   code_api = new.env()
-  #
-  #   gs4_auth(email = 'aworklab@gmail.com')
-  #   gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
-  #
-  #   code_api$town = read_sheet(gs_test, 'code_type')
-  #   code_api$signgu = read_sheet(gs_test, 'code_signgu')
-  #
-  # }
+  if(!("code_api" %in% ls(globalenv()))){
 
-  code_api = new.env()
+    code_api = new.env()
 
-  gs4_auth(email = 'aworklab@gmail.com')
-  gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
+    gs4_auth(email = 'aworklab@gmail.com')
+    gs_test = '1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU'
 
-  code_api$town = read_sheet(gs_test, 'code_type')
-  code_api$signgu = read_sheet(gs_test, 'code_signgu')
+    code_api$town = read_sheet(gs_test, 'code_type')
+    code_api$signgu = read_sheet(gs_test, 'code_signgu')
+
+  }
+
+
 
 
   api_region = dplyr::filter(code_api$town, type == "municipal" & name == region)$code
@@ -210,7 +203,7 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
 
   # gs 업로드 데이터 idx 중복 체크
 
-  list_idx = unique(read_sheet(gs_test, 'res_api_call')$idx)
+  list_idx = unique(read_sheet(gs_test, 'api_residence')$idx)
   res = res %>% filter(!(idx %in% list_idx))
 
   get.update(res)

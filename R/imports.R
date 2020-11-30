@@ -7,4 +7,6 @@
 #' @import dplyr
 #' @import stringr
 #' @import tidyr
+#' @import data.table
+#' @import ggplot2
 NULL

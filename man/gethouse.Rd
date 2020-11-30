@@ -2,11 +2,12 @@
 \alias{hello}
 \title{Hello, World!}
 \usage{
-  hello()
+  gethouse()
 }
 \description{
-  Prints 'Hello, world!'.
+  Collect Korean residence plan list from Public api route.
+  You may specify either a municipal regional name or the the type of supplying residence
 }
 \examples{
-  hello()
+  gethouse(page = 1, region = '서울', supply = "행복", sz = 1000, api_key = NULL)
 }
