@@ -6,7 +6,7 @@
 
 ### 제작 목적
 
-<img src= "https://user-images.githubusercontent.com/58664538/100576028-9b281f00-3320-11eb-8070-ea04ac65ea1f.png" width = 40%>
+<img src= "https://user-images.githubusercontent.com/58664538/100576028-9b281f00-3320-11eb-8070-ea04ac65ea1f.png" width = 60%>
 
 * [공공 데이터포털](https://www.data.go.kr/)에서 제공하는 API 호출 기능을 활용한 데이터 수집 및 저장 (gethouse)
 * 수집 된 데이터를 그래프로 정리하여 제공(getchart)
