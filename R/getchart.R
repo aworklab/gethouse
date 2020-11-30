@@ -7,7 +7,8 @@ getchart = function(){
 
   code_api = new.env()
 
-  gs4_auth(email = 'aworklab@gmail.com')
+  # gs4_auth(email = 'aworklab@gmail.com')
+  gs4_deauth()
   gs_test = '1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU'
 
   code_api$town = read_sheet(gs_test, 'code_type')
