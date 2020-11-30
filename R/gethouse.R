@@ -1,9 +1,3 @@
-# Code data ---------------------------------------------------------------
-
-# gs4_auth(email = 'aworklab@gmail.com')
-# gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
-# df_name = read_sheet(gs_test, 'df_name', col_types = c('ccciccc'))
-# code_apis = read_sheet(gs_test, 'code_type')
 
 # 임대주택단지 조회 ---------------------------------------------------------------
 
@@ -20,10 +14,11 @@ gethouse = function(page = 1, region = '서울', supply = "행복", sz = 1000, a
   }
   # env에 저장 여부 체크 + 코드 데이터 호출
 
+
   if(!("code_api" %in% ls(globalenv()))){
 
     code_api = new.env()
-
+    code_api
     gs4_auth(email = 'aworklab@gmail.com')
     gs_test = '1nNlVfclGkXzn9P-t02FtQG0PM16rejiouII2JHc2P9U'
     code_api$town = read_sheet(gs_test, 'code_type')
