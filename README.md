@@ -6,7 +6,7 @@
 
 ### 제작 목적
 
-* 국가 데이터 포털에서 제공하는 API 호출 기능을 활용한 데이터 수집 및 저장 (gethouse)
+* [공공 데이터포털](https://www.data.go.kr/)에서 제공하는 API 호출 기능을 활용한 데이터 수집 및 저장 (gethouse)
 * 수집 된 데이터를 그래프로 정리하여 제공(getchart)
 * 물리적 시간 한계로 패키지의 기능 상세화 대신, 활용 목적 흐름의 실증에 더 포커스를 맞춤
 
@@ -20,8 +20,8 @@
 * 국가 데이터 포털의 임대주택단지 리스트 데이터를 수집
 * 광역 지자체 및 주택 공급 형태에 따라 개별적 데이터 수집 가능
 * api key를 트래픽 한계로 사용 할 수 없을 경우 파라미터로 교체 가능
-* 수집된 데이터는 구글 스프레드 시트로 구현된 약식 DB에 중복 체크 후 업데이트
-([구글 시트](https://docs.google.com/spreadsheets/d/1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU/edit?usp=sharing))
+* 수집된 데이터는 [구글 스프레드시트](https://docs.google.com/spreadsheets/d/1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU/edit?usp=sharing)로 구현된 약식 DB에 중복 체크 후 업데이트
+
 <img src= "https://user-images.githubusercontent.com/58664538/100575462-7c755880-331f-11eb-83aa-a47bd657f845.png" width = 60%>
 
 
