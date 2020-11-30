@@ -16,4 +16,5 @@ Imports:
     lubridate,
     rjson,
     httr,
-    googlesheets4
+    googlesheets4,
+    dplyr
