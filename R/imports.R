@@ -4,6 +4,6 @@
 #' @import rjson
 #' @import httr
 #' @import googlesheets4
-#' @import dplyr
+#' @import tidyverse
 #' @ipoort data.table
 NULL
