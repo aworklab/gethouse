@@ -15,13 +15,19 @@
 
 #### gethouse()
 
+<img src = "https://user-images.githubusercontent.com/58664538/100575385-5059d780-331f-11eb-9c6c-f00201011d91.png" width = 60%>
+
 * 국가 데이터 포털의 임대주택단지 리스트 데이터를 수집
 * 광역 지자체 및 주택 공급 형태에 따라 개별적 데이터 수집 가능
 * api key를 트래픽 한계로 사용 할 수 없을 경우 파라미터로 교체 가능
 * 수집된 데이터는 구글 스프레드 시트로 구현된 약식 DB에 중복 체크 후 업데이트
 ([구글 시트](https://docs.google.com/spreadsheets/d/1A9t_LkPit8JT5Oodf6qBdkZcD50xaAlQPKe4lKvCrDU/edit?usp=sharing))
+<img src= "https://user-images.githubusercontent.com/58664538/100575462-7c755880-331f-11eb-83aa-a47bd657f845.png" width = 60%>
+
 
 #### getchart()
+
+<img src= "https://user-images.githubusercontent.com/58664538/100575206-f22cf480-331e-11eb-8a5d-8ac3675283d6.png" width = 40%>
 
 * 구글 스프레드 시트에 저장된 데이터로 지역별 공급 주택 수를 막대 그래프로 표시
 * 저장된 데이터를 지역 별로 일자 확인 후 최신 데이터만 합산
